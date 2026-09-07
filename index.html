@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crix Tag</title>
+<meta name="description" content="Crix Tag — a VR game in development by Crix Studios. Coming free to Meta Quest 3 and 3S.">
+<meta name="theme-color" content="#141C17">
+
+<meta property="og:title" content="Crix Tag">
+<meta property="og:description" content="A VR game in development by Crix Studios. Coming free to Meta Quest 3 and 3S.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="topnav">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="#top">Crix Tag</a>
+    <div class="nav-links">
+      <a href="#modes">Modes</a>
+      <a href="#maps">Maps</a>
+      <a href="#creators">Creators</a>
+      <a href="#shop">Shop</a>
+      <a href="#later">After launch</a>
+    </div>
+    <a class="btn small" href="#" data-discord>Discord</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-art"></div>
+
+  <div class="hero-inner">
+    <p class="status"><span class="pulse"></span>In development</p>
+
+    <img class="logo" src="assets/logo.png" alt="Crix Tag" data-optional>
+    <h1 class="wordmark">CRIX TAG</h1>
+
+    <p class="tagline">A VR game from Crix Studios.</p>
+    <p class="sub">Coming free to Meta Quest 3 and 3S.</p>
+
+    <div class="cta-row">
+      <a class="btn" href="#" data-discord>Join the Discord</a>
+      <a class="btn quiet" href="#modes">See what's coming</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ COUNTDOWN (off until you switch it on in script.js) ============ -->
+<section class="countdown" id="countdown" hidden>
+  <div class="wrap">
+    <p class="cd-kicker">Launching</p>
+    <p class="cd-date" id="cd-date"></p>
+    <div class="cd-grid" id="cd-grid">
+      <div class="cd-unit"><span id="cd-days">00</span><small>days</small></div>
+      <div class="cd-unit"><span id="cd-hours">00</span><small>hours</small></div>
+      <div class="cd-unit"><span id="cd-mins">00</span><small>minutes</small></div>
+      <div class="cd-unit"><span id="cd-secs">00</span><small>seconds</small></div>
+    </div>
+    <p class="cd-live" id="cd-live" hidden>Crix Tag is out now. Go play it.</p>
+  </div>
+</section>
+
+<!-- ============ FACTS ============ -->
+<section class="facts">
+  <div class="wrap">
+    <div class="fact">
+      <strong>Quest 3 &amp; 3S</strong>
+      <span>Standalone, no PC needed</span>
+    </div>
+    <div class="fact">
+      <strong>Free</strong>
+      <span>No cost to download and play</span>
+    </div>
+    <div class="fact">
+      <strong>10–20 players</strong>
+      <span>Per room</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODES ============ -->
+<section class="section" id="modes">
+  <div class="wrap">
+    <h2>Four ways to play</h2>
+    <p class="lede">Pick a mode when you make a room. Everyone joins with the same code.</p>
+
+    <div class="cards">
+      <article class="card">
+        <h3>Casual</h3>
+        <p>Plain tag. One player is it, they pass it on by touching someone, and it never really ends.</p>
+      </article>
+      <article class="card">
+        <h3>Infection</h3>
+        <p>The infected side grows every time they catch someone. Last one not infected wins the round.</p>
+      </article>
+      <article class="card">
+        <h3>Freeze tag</h3>
+        <p>Get tagged and you're stuck where you stand until a teammate reaches you and unfreezes you.</p>
+      </article>
+      <article class="card">
+        <h3>Modded</h3>
+        <p>Rooms where mod menus are allowed. Fling people around, break the physics, see what happens.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAPS ============ -->
+<section class="section band" id="maps">
+  <div class="wrap">
+    <h2>Maps at launch</h2>
+    <p class="lede">Everything here is planned to be in the game on day one.</p>
+
+    <div class="maps">
+      <div class="map"><h3>Spawn</h3><p>The hub everyone lands in. Wardrobe, leaderboard, music and a corner to sit in.</p></div>
+      <div class="map"><h3>Forest</h3><p>The main tag map. Trees to climb, long gaps to launch across.</p></div>
+      <div class="map"><h3>Shop</h3><p>Where Banana Bucks turn into hats.</p></div>
+      <div class="map"><h3>Movie theatre</h3><p>A big screen playing Crix's videos and livestreams.</p></div>
+      <div class="map"><h3>Horror</h3><p>Dark, quiet, and much worse to be chased through.</p></div>
+      <div class="map"><h3>Zero gravity</h3><p>No floor to push off. You move by shoving off whatever you can reach.</p></div>
+      <div class="map"><h3>Sandbox</h3><p>No rules, no round timer. Mess around.</p></div>
+      <div class="map"><h3>Prop hunt</h3><p>Turn into an object and hope nobody looks twice.</p></div>
+      <div class="map"><h3>Paintball</h3><p>Teams, paint, and a lot of arguing about who got hit.</p></div>
+      <div class="map"><h3>Gun PvP</h3><p>Free-for-all. Everyone against everyone.</p></div>
+      <div class="map"><h3>Only up</h3><p>One long climb. One long fall if you slip.</p></div>
+      <div class="map"><h3>Fanart room</h3><p>A gallery of art sent in by players.</p></div>
+      <div class="map"><h3>VIP room</h3><p>Members only.</p></div>
+      <div class="map"><h3>Recording studio</h3><p>Built for filming. More on that below.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPAWN + ROOM COMPUTER ============ -->
+<section class="section" id="hub">
+  <div class="wrap split">
+    <div>
+      <h2>Spawn is where everyone hangs out</h2>
+      <p class="lede">It's a place to stand around in, not just a menu you walk through.</p>
+      <ul class="ticks">
+        <li>A computer for joining rooms and changing your settings</li>
+        <li>A wardrobe for swapping your cosmetics</li>
+        <li>Music, and a chill corner to sit in</li>
+        <li>A TV playing Crix's videos</li>
+        <li>A leaderboard for the top players</li>
+        <li>A statue that lights up whenever Crix is online</li>
+      </ul>
+    </div>
+    <figure class="shot">
+      <img src="assets/spawn.png" alt="The Spawn hub in Crix Tag" data-optional>
+      <figcaption>Spawn</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <div class="panel">
+      <h3>The room computer</h3>
+      <p>Everything you need to get into a game, on one screen in Spawn.</p>
+      <div class="chips">
+        <span>Private room codes</span>
+        <span>Public room codes</span>
+        <span>Pick your colour with RGB sliders</span>
+        <span>Change your name</span>
+        <span>Private chat</span>
+        <span>FPS, ping and connection stats</span>
+        <span>Settings and account info</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREATORS ============ -->
+<section class="section band" id="creators">
+  <div class="wrap split reverse">
+    <figure class="shot">
+      <img src="assets/recording-studio.png" alt="The recording studio in Crix Tag" data-optional>
+      <figcaption>Recording studio</figcaption>
+    </figure>
+    <div>
+      <h2>A studio built for filming</h2>
+      <p class="lede">If you make videos, you shouldn't have to fight the game to get a decent shot. The recording studio is in at launch.</p>
+      <ul class="ticks">
+        <li>Mixed reality camera support</li>
+        <li>A green screen you can film against</li>
+        <li>Swap the backdrop colour to whatever you're editing on</li>
+        <li>Camera stands, so you can put the shot where you want it and leave it</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <h3 class="sub-h">Creator badges</h3>
+    <p class="lede">Post videos about Crix Tag and you can earn a badge that shows up in game. Three tiers, each one harder than the last.</p>
+    <ol class="tiers">
+      <li>
+        <h4>Creator</h4>
+        <p>Five decent videos about Crix Tag on YouTube or TikTok, 50 subscribers or followers, and 2,500 total views.</p>
+      </li>
+      <li>
+        <h4>Verified creator</h4>
+        <p>Ten strong videos, 500 subscribers or followers, and 10,000 total views.</p>
+      </li>
+      <li>
+        <h4>Paw painter</h4>
+        <p>Over 50 videos, 1,500 subscribers or followers, and 100,000 total views.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ SHOP ============ -->
+<section class="section" id="shop">
+  <div class="wrap">
+    <h2>Hats, shirts and Banana Bucks</h2>
+    <p class="lede">Banana Bucks are the in-game currency. Spend them in the Shop map on anything in the wardrobe.</p>
+
+    <div class="cards">
+      <article class="card">
+        <h3>Cosmetics</h3>
+        <p>Top hats, party hats, banana hats, coconut hats, caps and headphones. Shirts in black, white and one that says I heart Crix Tag. Sunglasses and normal glasses.</p>
+      </article>
+      <article class="card">
+        <h3>VIP</h3>
+        <p>A golden top hat, a golden nametag, a VIP badge and shirt, access to the VIP room, a Discord role, plus the fling hammer and money gun.</p>
+      </article>
+      <article class="card">
+        <h3>Mod menus</h3>
+        <p>Tools for modded rooms only, so normal games stay normal. Bundles are also planned for people who want a bit of everything.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LATER ============ -->
+<section class="section band" id="later">
+  <div class="wrap">
+    <h2>Coming after launch</h2>
+    <p class="lede">Ideas that aren't making the first release, but are on the list. Nothing here is promised yet.</p>
+    <div class="maps">
+      <div class="map"><h3>More maps</h3><p>Built from whatever the Discord asks for most.</p></div>
+      <div class="map"><h3>Seasonal cosmetics</h3><p>Limited hats that come and go with events.</p></div>
+      <div class="map"><h3>In-game events</h3><p>Scheduled nights where everyone piles into the same rooms.</p></div>
+      <div class="map"><h3>Bigger leaderboards</h3><p>Seasons, resets, and something to actually compete over.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOIN ============ -->
+<section class="section" id="join">
+  <div class="wrap">
+    <div class="join">
+      <h2>Get in early</h2>
+      <p>Announcements, sneak peeks and playtest invites all go out in the Discord before anywhere else.</p>
+      <div class="cta-row">
+        <a class="btn" href="#" data-discord>Join the Discord</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <strong>Crix Studios</strong>
+    <nav>
+      <a href="#modes">Modes</a>
+      <a href="#shop">Shop</a>
+      <a href="#" data-discord>Discord</a>
+      <a href="#">YouTube</a>
+    </nav>
+  </div>
+  <p class="wrap fineprint">Crix Tag is in development. Everything on this page can change before release.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
