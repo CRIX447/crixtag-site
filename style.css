@@ -4,25 +4,21 @@
    they update everywhere on the site.
    ============================================================ */
 
-/* ---------- CUSTOM FONTS ----------
-   Put your font files in assets/fonts/ using these exact names.
-   Until they exist, the site falls back to the system fonts
-   listed in --display and --body further down.                */
+/* ---------- CUSTOM FONT ----------
+   One font file, used for the whole site.
+   Put it in assets/fonts/ named either:
+
+       font.otf        or        font.ttf
+
+   You only need one of the two. The browser tries .otf first,
+   falls back to .ttf, and if neither is there it uses the
+   system fonts listed in --display and --body below.          */
 
 @font-face{
-  font-family:"Crix Display";
-  src:url("assets/fonts/crix-display.woff2") format("woff2"),
-      url("assets/fonts/crix-display.woff")  format("woff");
-  font-weight:400 800;
-  font-style:normal;
-  font-display:swap;
-}
-
-@font-face{
-  font-family:"Crix Body";
-  src:url("assets/fonts/crix-body.woff2") format("woff2"),
-      url("assets/fonts/crix-body.woff")  format("woff");
-  font-weight:400 800;
+  font-family:"Crix";
+  src:url("assets/fonts/font.otf") format("opentype"),
+      url("assets/fonts/font.ttf") format("truetype");
+  font-weight:normal;
   font-style:normal;
   font-display:swap;
 }
@@ -40,9 +36,9 @@
   --gold-deep:#D9A31A;
   --gold-ink:#241A02;
 
-  /* type */
-  --display:"Crix Display","Trebuchet MS",system-ui,sans-serif;
-  --body:"Crix Body","Segoe UI",system-ui,sans-serif;
+  /* type — both point at the same font file */
+  --display:"Crix","Trebuchet MS",system-ui,sans-serif;
+  --body:"Crix","Segoe UI",system-ui,sans-serif;
 
   --radius:18px;
 }
