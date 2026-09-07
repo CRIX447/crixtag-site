@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Store — Crix Tag</title>
+<meta name="description" content="What's in the Crix Tag in-game store right now.">
+<meta name="theme-color" content="#141C17">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="topnav">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="index.html">Crix Tag</a>
+    <div class="nav-links">
+      <a href="index.html#modes">Modes</a>
+      <a href="index.html#maps">Maps</a>
+      <a href="store.html" aria-current="page">Store</a>
+      <a href="cosmetics.html">Cosmetics</a>
+      <a href="index.html#creators">Creators</a>
+    </div>
+    <a class="btn small" href="#" data-discord>Discord</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="page-head">
+  <div class="wrap">
+    <h1>In the store right now</h1>
+    <p class="lede">This page reads straight from the game, so what you see here is what's on the shelf in the Shop map. Stock changes, so check back.</p>
+    <p class="stamp" id="store-stamp" hidden>Last updated <span id="store-time"></span></p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+
+    <!-- Loading -->
+    <div class="state" id="store-loading">
+      <p>Checking the shelves…</p>
+    </div>
+
+    <!-- Items land here -->
+    <div class="store-grid" id="store-grid" hidden></div>
+
+    <!-- Nothing in stock -->
+    <div class="state" id="store-empty" hidden>
+      <h2>The shelves are bare</h2>
+      <p>Nothing is in the store at the moment. New stock gets announced in the Discord first.</p>
+      <a class="btn" href="#" data-discord>Join the Discord</a>
+    </div>
+
+    <!-- Couldn't reach the game -->
+    <div class="state" id="store-error" hidden>
+      <h2>Can't reach the store</h2>
+      <p>The game didn't answer. It might be down for an update — try again in a bit.</p>
+      <button class="btn" id="store-retry">Try again</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="section band">
+  <div class="wrap">
+    <div class="join">
+      <h2>How the store works</h2>
+      <p>You buy cosmetics with Banana Bucks, earned by playing or bought in a pack. VIP is separate: a one-time payment, not a subscription.</p>
+      <div class="cta-row">
+        <a class="btn quiet" href="cosmetics.html">See the special cosmetics</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <strong>Crix Studios</strong>
+    <nav>
+      <a href="index.html#modes">Modes</a>
+      <a href="store.html">Store</a>
+      <a href="cosmetics.html">Cosmetics</a>
+      <a href="#" data-discord>Discord</a>
+    </nav>
+  </div>
+  <p class="wrap fineprint">Crix Tag is in development. Prices and stock can change.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "updated": "2026-09-07T10:00:00+10:00",
+  "items": [
+    {
+      "name": "Top hat",
+      "description": "The classic. Tall, black, unnecessary.",
+      "price": 1200,
+      "image": "assets/cosmetics/tophat.png"
+    },
+    {
+      "name": "Banana hat",
+      "description": "A banana. On your head.",
+      "price": 950,
+      "image": "assets/cosmetics/banana-hat.png",
+      "label": "New"
+    },
+    {
+      "name": "Coconut hat",
+      "description": "Half a coconut, worn with confidence.",
+      "price": 950,
+      "image": "assets/cosmetics/coconut-hat.png"
+    },
+    {
+      "name": "Headphones",
+      "description": "They don't do anything. They just look good.",
+      "price": 800,
+      "image": "assets/cosmetics/headphones.png"
+    },
+    {
+      "name": "I heart Crix Tag shirt",
+      "description": "Show some loyalty.",
+      "price": 1500,
+      "image": "assets/cosmetics/crix-shirt.png",
+      "label": "Limited"
+    },
+    {
+      "name": "Sunglasses",
+      "description": "For looking cool while being flung across a map.",
+      "price": 700,
+      "image": "assets/cosmetics/sunglasses.png"
+    }
+  ]
+}
