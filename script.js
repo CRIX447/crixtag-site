@@ -73,8 +73,8 @@ const ASSET_MODE = new URLSearchParams(location.search).has("assets");
 if(ASSET_MODE) document.documentElement.classList.add("show-files");
 
 const FRAME_HINTS = {
-  "slide-art": ["Screenshot coming soon", "1600 × 1000, PNG or JPG"],
-  "shot":      ["Screenshot coming soon", "1600 × 1000, PNG or JPG"],
+  "slide-art": ["Screenshot coming soon", "1920 × 1080, PNG or JPG"],
+  "shot":      ["Screenshot coming soon", "1920 × 1080, PNG or JPG"],
   "shot-item": ["Screenshot coming soon", "1920 × 1080, PNG or JPG"],
   "item-art":  ["Art coming soon",        "1024 × 1024, transparent PNG"],
   "tier-art":  ["",                       "512 × 512, transparent PNG"]
