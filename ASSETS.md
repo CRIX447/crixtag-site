@@ -38,21 +38,24 @@ To change the caption under a screenshot ("In game"), edit its
 
 ## Map screenshots: home page carousel
 
-Size: **1600 × 1000** (16:10), PNG or JPG.
+Done. Made from the screenshots you uploaded: 1600 × 900 JPGs, about 150 KB each.
+Your full-size originals are kept in `assets/originals/`.
 
-- [ ] `assets/map-spawn.png`
-- [ ] `assets/map-forest.png`
-- [ ] `assets/map-shop.png`
-- [ ] `assets/map-movie-theatre.png`
-- [ ] `assets/map-fanart-room.png`
-- [ ] `assets/map-recording-studio.png` (also used in the Creators section)
+- [x] `assets/map-spawn.jpg` (from `01_spawn_room.png`)
+- [x] `assets/map-forest.jpg` (from `17_forest.png`)
+- [x] `assets/map-shop.jpg` (from `13_mall.png`)
+- [x] `assets/map-movie-theatre.jpg` (from `22_theater.png`)
+- [x] `assets/map-fanart-room.jpg` (from `24_fanart_gallery.png`)
+- [x] `assets/map-recording-studio.jpg` (from `23_recording_studio.png`, also used in the Creators section)
+
+To swap one later, upload a 1920 × 1080 picture with the same name.
 
 ## Hero (top of the home page)
 
 - [ ] `assets/logo.png`: the Crix Tag logo, **transparent PNG, about 1200 px wide**.
       Once it's there it replaces the "CRIX TAG" text.
-- [ ] `assets/background.png`: a wide in-game shot behind the logo,
-      **2400 × 1350** or bigger. It's dimmed automatically (change `opacity` under `.hero-art` in `style.css`).
+- [x] `assets/background.jpg`: the forest shot, dimmed behind the logo.
+      Replace it with any wide in-game shot, **1920 × 1080** or bigger. It's dimmed automatically (change `opacity` under `.hero-art` in `style.css`).
 
 ## Cosmetics: item renders
 
