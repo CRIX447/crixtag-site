@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   hideMissingImages();
   setupCountdown();
   setupCarousel();
+  setupScreenshots();
   setupStore();
 });
 
@@ -60,13 +61,44 @@ function setupDiscordLinks(){
   });
 }
 
-/* ---- Any image file you haven't added yet just disappears,
-        instead of showing a broken icon. ---- */
+/* ---- Any image file you haven't added yet never shows a broken
+        icon. Screenshot and item frames show a neat "coming soon"
+        card instead; everything else just disappears.
+
+        Add ?assets to the end of any page address, e.g.
+            index.html?assets
+        and every empty frame also shows the exact file name it's
+        waiting for and the size to make it. ---- */
+const ASSET_MODE = new URLSearchParams(location.search).has("assets");
+if(ASSET_MODE) document.documentElement.classList.add("show-files");
+
+const FRAME_HINTS = {
+  "slide-art": ["Screenshot coming soon", "1600 × 1000, PNG or JPG"],
+  "shot":      ["Screenshot coming soon", "1600 × 1000, PNG or JPG"],
+  "shot-item": ["Screenshot coming soon", "1920 × 1080, PNG or JPG"],
+  "item-art":  ["Art coming soon",        "1024 × 1024, transparent PNG"],
+  "tier-art":  ["",                       "512 × 512, transparent PNG"]
+};
+
 function hideMissingImages(root = document){
   root.querySelectorAll("img[data-optional]").forEach(img => {
-    img.addEventListener("error", () => img.remove());
-    if(img.complete && img.naturalWidth === 0) img.remove();
+    const missing = () => markMissing(img);
+    img.addEventListener("error", missing);
+    if(img.complete && img.naturalWidth === 0) missing();
   });
+}
+
+function markMissing(img){
+  const frame = img.parentElement;
+  const type = frame && Object.keys(FRAME_HINTS).find(c => frame.classList.contains(c));
+  if(type){
+    const [label, size] = FRAME_HINTS[type];
+    frame.classList.add("empty");
+    frame.dataset.label = label;
+    frame.dataset.file = `${img.getAttribute("src")}  ·  ${size}`;
+  }
+  img.remove();
+  document.dispatchEvent(new CustomEvent("crix:missing", { detail: frame }));
 }
 
 /* ---- Countdown ---- */
@@ -156,6 +188,57 @@ function setupCarousel(){
       s.setAttribute("aria-hidden", String(!on));
     });
     dots.forEach((d, i) => d.classList.toggle("on", i === index));
+  }
+}
+
+/* ---- Screenshot gallery ----
+   Shows whichever screenshots exist in assets/screenshots/.
+   If none have been added yet, the whole block stays hidden
+   (unless you're looking with ?assets). Click one to see it big. */
+function setupScreenshots(){
+  const block = document.querySelector("[data-shots]");
+  if(!block) return;
+
+  const grid = block.querySelector(".shots");
+  const box  = document.getElementById("lightbox");
+  const big  = box.querySelector("img");
+  const cap  = box.querySelector("figcaption");
+  let index = 0;
+
+  const live = () => [...grid.querySelectorAll(".shot-item:not(.empty)")];
+
+  function refresh(){
+    if(ASSET_MODE) return;
+    grid.querySelectorAll(".shot-item.empty").forEach(f => f.hidden = true);
+    block.hidden = live().length === 0;
+  }
+  refresh();
+  document.addEventListener("crix:missing", refresh);
+
+  grid.addEventListener("click", e => {
+    const item = e.target.closest(".shot-item:not(.empty)");
+    if(!item) return;
+    open(live().indexOf(item));
+  });
+
+  box.querySelector("[data-close]").addEventListener("click", () => box.close());
+  box.querySelector("[data-prev]").addEventListener("click", () => open(index - 1));
+  box.querySelector("[data-next]").addEventListener("click", () => open(index + 1));
+  box.addEventListener("click", e => { if(e.target === box) box.close(); });
+  box.addEventListener("keydown", e => {
+    if(e.key === "ArrowLeft")  open(index - 1);
+    if(e.key === "ArrowRight") open(index + 1);
+  });
+
+  function open(i){
+    const items = live();
+    if(!items.length) return;
+    index = (i + items.length) % items.length;
+    const img = items[index].querySelector("img");
+    big.src = img.src;
+    big.alt = img.alt;
+    cap.textContent = items[index].querySelector("figcaption")?.textContent || "";
+    if(!box.open) box.showModal();
   }
 }
 
